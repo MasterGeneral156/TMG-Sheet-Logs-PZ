@@ -1,0 +1,90 @@
+module tmgSheetLogs
+{
+	item tmgLogStacks2
+	{
+		DisplayCategory 		= Material,
+		Weight 		= 6,
+		Type 		= Normal,
+		DisplayName 		= Two Logs Stack,
+		Icon 		= Logs2,
+		WorldStaticModel 		= TwoLogsStack,
+	}
+	item tmgLogStacks3
+	{
+		DisplayCategory 		= Material,
+		Weight 		= 9,
+		Type 		= Normal,
+		DisplayName 		= Three Logs Stack,
+		Icon 		= Logs3,
+		WorldStaticModel 		= ThreeLogsStack,
+	}
+	item tmgLogStacks4
+	{
+		DisplayCategory 		= Material,
+		Weight 		= 12,
+		Type 		= Normal,
+		DisplayName 		= Four Logs Stack,
+		Icon 		= Logs4,
+		WorldStaticModel 		= FourLogsStack,
+	}
+	recipe Make Two-Log Stack
+	{
+		Log=2,
+		SheetRope=4,
+		Result 		: tmgLogStacks2,
+		Time 		: 60.0,
+		Category 		: Carpentry,
+		OnGiveXP 		: Recipe.OnGiveXP.None,
+		Sound 		: LogAddToStack,
+	}
+	recipe Make Three-Log Stack
+	{
+		Log=3,
+		SheetRope=4,
+		Result 		: tmgLogStacks3,
+		Time 		: 60.0,
+		Category 		: Carpentry,
+		OnGiveXP 		: Recipe.OnGiveXP.None,
+		Sound 		: LogAddToStack,
+	}
+	recipe Make Four-Log Stack
+	{
+		Log=4,
+		SheetRope=4,
+		Result 		: tmgLogStacks4,
+		Time 		: 60.0,
+		Category 		: Carpentry,
+		OnGiveXP 		: Recipe.OnGiveXP.None,
+		Sound 		: LogAddToStack,
+	}
+	recipe Unstack Logs
+	{
+		tmgLogStacks2,
+		Result 		: Log=2,
+		Time 		: 60.0,
+		OnCreate 		: Recipe.OnCreate.SplitLogStack,
+		Category 		: Carpentry,
+		OnGiveXP 		: Recipe.OnGiveXP.None,
+		Sound 		: LogRemoveFromStack,
+	}
+	recipe Unstack Logs
+	{
+		tmgLogStacks3,
+		Result 		: Logs=3,
+		Time 		: 60.0,
+		OnCreate 		: Recipe.OnCreate.SplitLogStack,
+		Category 		: Carpentry,
+		OnGiveXP 		: Recipe.OnGiveXP.None,
+		Sound 		: LogRemoveFromStack,
+	}
+	recipe Unstack Logs
+	{
+		tmgLogStacks4,
+		Result 		: Log=4,
+		Time 		: 60.0,
+		OnCreate 		: Recipe.OnCreate.SplitLogStack,
+		Category 		: Carpentry,
+		OnGiveXP 		: Recipe.OnGiveXP.None,
+		Sound 		: LogRemoveFromStack,
+	}
+}
